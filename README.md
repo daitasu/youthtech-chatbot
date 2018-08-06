@@ -6,16 +6,16 @@
 
 ### MacOS
 ---
-nvmを使ってインストールしていきます。
-1. gitがインストールされているか確認
+nvmを使ってインストールしていきます。<br>
+1. gitがインストールされているか確認<br>
 
 ```
 git -version
 ```
 
-※ gitコマンドがインストールされてない方は、
-こちら→http://www.tettori.net/post/1491/
-2. gitを用いてnvmをインストール
+※ gitコマンドがインストールされてない方は、<br>
+こちら→http://www.tettori.net/post/1491/<br>
+2. gitを用いてnvmをインストール<br>
 ```
 git clone https://github.com/creationix/nvm.git ~/.nvm
 ```
@@ -24,14 +24,14 @@ git clone https://github.com/creationix/nvm.git ~/.nvm
 source ~/.nvm/nvm.sh
 ```
 
-これによってnvmコマンドが使えるようになる
+これによってnvmコマンドが使えるようになる<br>
 
 4. 念のためインストールされているか確認
 ```
 nvm --version
 ```
 
-問題なければ、 `0.33.11` などが表示されます。
+問題なければ、 `0.33.11` などが表示されます。<br>
 
 5. node.jsをインストール
 ```
@@ -43,7 +43,8 @@ nvm install v8.11.3
 nvm ls; node -v
 ```
 
-参考：http://www.tettori.net/post/1495/
+<br>
+参考：http://www.tettori.net/post/1495/<br>
 
 ## 2. LINE Developersのアカウント作成(今回はすべて無料枠で作成します。クレカ情報などもいりません。)
 
@@ -52,10 +53,10 @@ https://developers.line.me/ja/services/messaging-api/
 
 1. 新規プロバイダーの作成
 「新規プロバイダーを作成」ボタンを押し、<br>
-画面の指示に従ってプロバイダーの作成を行います。
+画面の指示に従ってプロバイダーの作成を行います。<br>
 
 2. 新規チャネル作成
-LINE Botのアカウントを作成します。
+LINE Botのアカウントを作成します。<br>
 
 アプリアイコン画像、アプリ名、アプリ説明を記入してください。<br>
 プラン： 「Developer Trial」にします。<br>
