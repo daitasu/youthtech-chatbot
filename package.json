@@ -1,0 +1,23 @@
+{
+  "name": "bot-hanzon-ppt",
+  "version": "1.0.0",
+  "description": "for hands-on",
+  "main": "index.js",
+  "scripts": {
+    "test": "node index.js",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://git.heroku.com/bot-hanzon-ppt.git"
+  },
+  "keywords": [
+    "lineBot"
+  ],
+  "author": "daitasu",
+  "license": "MIT",
+  "dependencies": {
+    "@line/bot-sdk": "^5.2.0",
+    "express": "^4.16.2"
+  }
+}
