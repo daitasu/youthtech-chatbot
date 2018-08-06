@@ -72,7 +72,7 @@ Bot一覧に移動するので、自分が作成したBotを選択します。<b
 まずは、「QRコード」を自分のスマホで読み取り、LINEで作ったアカウントと<br>
 友達になりましょう！<br>
 　
-## 5. Botのアクセストークン覚える
+## 3. Botのアクセストークン覚える
 このままだと、ひたすら同じ応答のみを行うBotになります。<br>
 
 ここからは、設定を少しずつ変えていきます。<br>
@@ -80,11 +80,11 @@ Bot一覧に移動するので、自分が作成したBotを選択します。<b
 先ほどの「チャネル基本設定」で、各種設定を変更します。<br>
 > LINE@機能の利用
 - 自動応答メッセージ
-- 友だち追加時あいさつ
+- 友だち追加時あいさつ<br>
 を「編集」ボタンから「利用しない」に変更します。<br>
 
 > メッセージ送受信設定
-- アクセストークン
+- アクセストークン<br>
 「再発行」ボタンより再発行します。失効期間が質問されますが、気にしなくて大丈夫です。<br>
 
 ここで出てきた、<br>
@@ -92,7 +92,7 @@ Bot一覧に移動するので、自分が作成したBotを選択します。<b
 - Channel Secret
 は後ほど利用するので、メモしておいてください。<br>
 
-## 6. herokuのアカウント作成
+## 4. herokuのアカウント作成
 下記サイトより、Herokuアカウントを作成します。<br>
 https://jp.heroku.com/
 
@@ -104,31 +104,31 @@ PaaSと呼ばれるクラウドサービスで、個人利用でもほとんど�
 名前などを入力しましょう。言語が聞かれた場合は、「Node.js」を選択してください。<br>
 
 2. アプリを作成する
-アカウントができたら、アプリを作ります。
-右上より、「new」 → 「create new app」の順に進みます。
+アカウントができたら、アプリを作ります。<br>
+右上より、「new」 → 「create new app」の順に進みます。<br>
 
 - app name・・・アプリの名前を入れてください。
 - region・・・「アメリカ」か「イギリス」です。どちらでも大丈夫です。
 - pipe line・・・無視してください。
 
-これでHerokuアプリの土台ができました。
+これでHerokuアプリの土台ができました。<br>
 
-## 7. アクセストークン記入(YOUR_CHANNEL_ACCESS_TOKEN, YOUR_CHANNEL_SECRET)
-先ほど、覚えて置いた
-- アクセストークン
-- Channel Secret
-を利用して、herokuアプリとLINE Botの接続ができるようにします。
+## 5. アクセストークン記入(YOUR_CHANNEL_ACCESS_TOKEN, YOUR_CHANNEL_SECRET)
+先ほど、覚えて置いた<br>
+- アクセストークン<br>
+- Channel Secret<br>
+を利用して、herokuアプリとLINE Botの接続ができるようにします。<br>
 
 Herokuの「Settings」タブを押し、「Config Vars」の欄の<br>
 「Reveal Config Vars」を押します。<br>
 KEYとVALUEが出るので、それぞれ以下のように記入します。<br>
 
-1. KEY：（YOUR_CHANNEL_ACCESS_TOKEN）、VALUE：(あなたのLINE BOTのアクセストークン)
-2. KEY：(YOUR_CHANNEL_SECRET)、VALUE：(あなたのLINE BOTのChannel Secret)
+1. KEY：（YOUR_CHANNEL_ACCESS_TOKEN）、VALUE：(あなたのLINE BOTのアクセストークン)<br>
+2. KEY：(YOUR_CHANNEL_SECRET)、VALUE：(あなたのLINE BOTのChannel Secret)<br>
 
-では、最後にコードを実際にデプロイしていきます。
+では、最後にコードを実際にデプロイしていきます。<br>
 
-## 8. コードのデプロイ
+## 6. コードのデプロイ
 下記サイトから、 コードをcloneしてきます。<br>
 ※今回はあらかじめ作成したサンプルコードを使います。コードの内容は後ほどご説明します。<br>
 ターミナル(コマンドプロンプト)を開き、以下を記載していきます。
@@ -148,23 +148,23 @@ Herokuの「Settings」より、「Info」→「Heroku Git URL」を確認しま
 git push <あなたのHerokuのGit URL>
 ```
 
-これでコードのデプロイが完了しました。
+これでコードのデプロイが完了しました。<br>
 
 Herokuの画面右上、「More」 → 「View logs」より `Node app is running -> port: XXXXX` <br>
 が出ていればOKです。<br>
 
 最後に、LINE BOTに設定を追加します。<br>
 
-## 9. Webhookの設定
+## 7. Webhookの設定
 LINEから届いたメッセージをHerokuアプリに飛ばす設定です。<br>
 「LINE Developers」(https://developers.line.me/console/channel/)を開き、<br>
 先ほどのBotの設定画面に移動します。<br>
 <br>
 > メッセージ送受信設定
-- Webhook送信
+- Webhook送信<br>
 「編集」 → 「利用する」にします。
 
-- Webhook URL ※SSLのみ対応 
+- Webhook URL ※SSLのみ対応 <br>
 Herokuの「Settings」 → 「Domains and certificates」にある<br>
 https://xxxxxxxxxxxx.herokuapp.com/<br>
 をコピーして、貼り付けます。
